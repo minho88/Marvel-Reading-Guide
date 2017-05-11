@@ -3,26 +3,146 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Mahvel</title>
+    <title>Marvel Reading Guide</title>
     <link rel="stylesheet" href="styles/normalize.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="styles/html5bp.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="styles/style.css" media="screen" charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="./favicon.ico" rel="icon" type="image/x-icon" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-  <h1>Marvel API</h1>
-  <div id="results">
-    <p>Just testing out the Marvel API pulling some comics. For more information on the API go to <a href="https://developer.marvel.com">developer.marvel.com</a></p>
+  <div id="loader"><!--Loading Gif Credit to Jam-Factory--></div>
+
+  <div class="lg">
+    <div class="container">
+
+      <h1 class="title hidden" style="position:absolute; text-align:center; width:100%; margin-top: 16%; text-shadow: 3px 0px 20px rgb(0, 0, 0); text-transform:uppercase;"><span style="color:#f0141e;">Marvel</span> Reading Guide</h1>
+
+      <div class="mod">
+
+        <div id="cont-1">
+
+              <p>Major Events</p>
+
+              <br>
+
+              <p>Order By:</p>
+
+              <br>
+
+              <p>Medium:</p>
+
+          </div>
+
+      </div>
+
+    </div>
+
+    <div class="overlay"></div>
+
+      <div id="results"></div>
+
   </div>
 
-<script
-  src="https://code.jquery.com/jquery-3.1.1.js"
-  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous"></script>
-    <script src="js/vendor/underscore-min.js"></script>
-    <script src="js/app.js"></script>
+<div class="lg2">
+
+  <div class="hc">
+
+    <select id="events" name="events" style="background: rgb(195, 195, 195); color:#000; height:40px; padding-left:5px; padding-right:5px; border-radius:5px;">
+      <option value="Secret Wars">Secret Wars (1984)</option>
+      <option value="Secret Wars II">Secret Wars II (1985)</option>
+      <option value="Mutant Massacre">Mutant Massacre</option>
+      <option value="Fall of the Mutants">Fall of the Mutants</option>
+      <option value="Inferno">Inferno</option>
+      <option value="Atlantis Attacks">Atlantis Attacks</option>
+      <option value="Acts of Vengeance!">Acts of Vengeance!</option>
+      <option value="X-Tinction Agenda">X-Tinction Agenda</option>
+      <option value="Infinity Gauntlet">The Infinity Gauntlet</option>
+      <option value="Infinity War">Infinity War</option>
+      <option value="Maximum Carnage">Maximum Carnage</option>
+      <option value="Fatal Attractions">Fatal Attractions</option>
+      <option value="Siege of Darkness">Siege of Darkness</option>
+      <option value="Age of Apocalypse">Age of Apocalypse</option>
+      <option value="Onslaught">Onslaught Saga</option>
+      <option value="Maximum Security">Maximum Security</option>
+      <option value="Avengers Disassembled">Avengers Disassembled</option>
+      <option value="House of M">House of M</option>
+      <option value="Annihilation">Annihilation</option>
+      <option value="Civil War">Civil War</option>
+      <option value="World War Hulk">World War Hulk</option>
+      <option value="Annihilation: Conquest">Annihilation: Conquest</option>
+      <option value="Messiah CompleX">Messiah CompleX</option>
+      <option value="Secret Invasion">Secret Invasion</option>
+      <option value="War of Kings">War of Kings</option>
+      <option value="Messiah War">Messiah War</option>
+      <option value="Fall of the Hulks">Fall of the Hulks</option>
+      <option value="Siege">Siege</option>
+      <option value="Realm of Kings">Realm of Kings</option>
+      <option value="The Thanos Imperative">The Thanos Imperative</option>
+      <option value="World War Hulks">World War Hulks</option>
+      <option value="Shadowland">Shadowland</option>
+      <option value="Chaos War">Chaos War</option>
+      <option value="Age of X">Age of X</option>
+      <option value="Fear Itself">Fear Itself</option>
+      <option value="Spider-Island">Spider-Island</option>
+      <option value="Avengers vs X-Men">Avengers vs. X-Men</option>
+      <option value="Age of Ultron">Age of Ultron</option>
+      <option value="Infinity">Infinity</option>
+      <option value="Original Sin">Original Sin</option>
+      <option value="AXIS">AXIS</option>
+      <option value="Spider-Verse">Spider-Verse</option>
+      <option value="Secret Wars (2015)">Secret Wars (2015)</option>
+      <option value="Civil War II">Civil War II</option>
+      <option value="Dead No More: The Clone Conspiracy">Dead No More: The Clone Conspiracy</option>
+      <option value="Monsters Unleashed">Monsters Unleashed</option>
+    </select>
+
+  </div>
+
+  <div class="wrap-r">
+    <div id="results2"></div>
+    <div class="desc">
+
+      <div class="feat"><h3 style="margin-bottom:1em;">Featuring:</h3><span></span></div>
+
+    </div>
+    <div class="creator"></div>
+  </div>
+
+  <div class="wrap-r2">
+
+    <div class="hc2">
+      <h2 style="display:inline;">Series &amp; Tie-Ins: </h2>
+
+      <select id="order" name="Orderby" style="display:inline; color:#fff; height:40px; padding-left:5px; padding-right:5px; border-radius:5px; background:#191919!important;">
+          <option value="issueNumber">Issue Number</option>
+          <option value="title">Title</option>
+          <option value="onsaleDate">On Sale Date</option>
+      </select>
+
+      <select id="media" name="media" style="display:inline; color:#fff; height:40px; padding-left:5px; padding-right:5px; border-radius:5px; background:#191919!important;">
+          <option value="comic">Comic</option>
+          <option value="hardcover">Hard Cover</option>
+      </select>
+
+    </div>
+
+    <div id="results3"></div>
+    <div class="creator2"></div>
+  </div>
+
+</div>
+
+<div class="tag">Javascript Final Project: Minho Ha</div>
+
+<div class="footer">Data provided by Marvel. &copy; 2014 Marvel</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/app.js"></script>
+
 </body>
 </html>
